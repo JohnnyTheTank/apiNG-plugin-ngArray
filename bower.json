@@ -1,0 +1,28 @@
+{
+  "name": "apiNG-plugin-ngArray",
+  "homepage": "https://github.com/JohnnyTheTank/apiNG-plugin-ngArray",
+  "authors": [
+    "Jonathan Hornung <jonathan.hornung@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "description": "ngArray loader plugin for apiNG",
+  "main": "dist/aping-plugin-ng-array.min.js",
+  "moduleType": [],
+  "keywords": [
+    "aping",
+    "ngArray",
+    "angularjs",
+    "json"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "apiNG": "*"
+  }
+}

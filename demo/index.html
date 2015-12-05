@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apiNG ngArray Demo</title>
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../bower_components/apiNG/dist/aping.min.js"></script>
+    <script src="aping-config.js"></script>
+    <script src="../src/aping-ng-array-directive.js"></script>
+    <script src="aping-design-blanko.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="app">
+    <aping
+            aping-ng-array="[{'name':'array1'}, {'name':'array2'}]">
+    </aping>
+</body>
+</html>
