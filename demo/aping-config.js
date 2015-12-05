@@ -8,7 +8,6 @@ apingApp.config(['$provide', function ($provide) {
         orderBy : "timestamp",
         orderReverse : "true",
         type: "custom",
-        removeDoubles: "true"
     });
 
 }]);
