@@ -20,19 +20,24 @@ var jjtApingNgArray = angular.module("jtt_aping_ng_array", [])
 
                 requests.forEach(function (request) {
 
-                    if(request.name && scope[request.name] && scope[request.name].constructor === Array) {
+                    if(request.name && scope[request.name]) {
 
                         var resultArray = [];
 
-                        if (request.items < 0) {
-                            resultArray = scope[request.name];
-                        } else {
-                            angular.forEach(scope[request.name], function (value, key) {
-                                if(key < request.items) {
-                                    resultArray.push(value);
-                                }
-                            });
+                        if(scope[request.name].constructor === Array) {
+                            if (request.items < 0) {
+                                resultArray = scope[request.name];
+                            } else {
+                                angular.forEach(scope[request.name], function (value, key) {
+                                    if(key < request.items) {
+                                        resultArray.push(value);
+                                    }
+                                });
+                            }
+                        } else if (typeof scope[request.name] === 'object' && scope[request.name] !== null) {
+                            resultArray.push(scope[request.name]);
                         }
+
                         apingController.concatToResults(resultArray);
                     }
 

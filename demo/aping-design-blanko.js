@@ -19,4 +19,6 @@ angular.module('jtt_aping_design_blanko', [])
             {f: false, g: true}
         ];
 
+        $rootScope.object1 = {type:"simple object"};
+
     }]);
