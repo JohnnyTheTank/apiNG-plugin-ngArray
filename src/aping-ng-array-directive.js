@@ -38,7 +38,9 @@ var jjtApingNgArray = angular.module("jtt_aping_ng_array", [])
                             resultArray.push(scope[request.name]);
                         }
 
-                        apingController.concatToResults(resultArray);
+                        if(resultArray.length > 0) {
+                            apingController.concatToResults(resultArray);
+                        }
                     }
 
                 });
