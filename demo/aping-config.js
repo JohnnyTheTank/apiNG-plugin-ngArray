@@ -9,7 +9,7 @@ apingApp.config(['$provide', function ($provide) {
         maxItems: 100, //max items per aping
         orderBy : "timestamp",
         orderReverse : "true",
-        model: "custom",
+        model: "native",
     });
 
 }]);
