@@ -10,11 +10,15 @@
     <script src="aping-config.js"></script>
     <script src="../src/aping-ng-array-directive.js"></script>
     <script src="aping-design-blanko.js"></script>
+    <script src="dataController.js"></script>
+
     <script src="app.js"></script>
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="dataController">
+
     <aping
             aping-ng-array="[{'name':'array1'}, {'name':'array2'}, {'name':'object1'}]">
     </aping>
+
 </body>
 </html>
