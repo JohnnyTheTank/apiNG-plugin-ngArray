@@ -1,5 +1,5 @@
 {
-  "name": "aping-plugin-ngarray",
+  "name": "aping-plugin-ng-array",
   "version": "0.7.0",
   "description": "ngArray loader plugin for apiNG",
   "main": "dist/aping-plugin-ng-array.min.js",
