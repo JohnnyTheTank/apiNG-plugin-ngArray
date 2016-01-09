@@ -1,25 +1,38 @@
 module.exports = function(grunt) {
 
+    var banner = '/**\n    @name: <%= pkg.name %> \n    @version: <%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) \n    @author: <%= pkg.author %> \n    @url: <%= pkg.homepage %> \n    @license: <%= pkg.license %>\n*/\n';
+
+    var files = [
+                    'src/aping-ng-array-directive.js'
+                ];
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             js: {
                 files : {
-                    'dist/aping-plugin-ng-array.min.js' : [
-                        'src/aping-ng-array-directive.js'
-                    ]
+                    'dist/aping-plugin-ng-array.min.js' : files
                 }
             },
             options: {
-                banner: '\n/*! <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) by <%= pkg.author %> */\n',
+                banner: banner,
             }
+        },
+        concat: {
+            options: {
+                separator: ';',
+                banner: banner,
+            },
+            dist: {
+                files : {
+                    'dist/aping-plugin-ng-array.js' : files
+                }
+            },
         },
         watch: {
             minifiyJs: {
-                files: [
-                    'src/aping-ng-array-directive.js'
-                ],
-                tasks: ['uglify'],
+                files: files,
+                tasks: ['uglify', 'concat'],
                 options: {
                     spawn: true,
                 }
@@ -27,6 +40,7 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 

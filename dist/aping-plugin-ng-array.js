@@ -1,3 +1,10 @@
+/**
+    @name: aping-plugin-ngarray 
+    @version: 0.7.0 (09-01-2016) 
+    @author: Jonathan Hornung 
+    @url: https://github.com/JohnnyTheTank/apiNG-plugin-ngArray#readme 
+    @license: MIT
+*/
 "use strict";
 
 var jjtApingNgArray = angular.module("jtt_aping_ng_array", [])

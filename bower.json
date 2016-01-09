@@ -4,7 +4,7 @@
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "ngArray loader plugin for apiNG",
   "main": "dist/aping-plugin-ng-array.min.js",
   "moduleType": [],
