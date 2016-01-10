@@ -1,8 +1,8 @@
 /**
-    @name: aping-plugin-ngarray 
-    @version: 0.7.0 (09-01-2016) 
-    @author: Jonathan Hornung 
-    @url: https://github.com/JohnnyTheTank/apiNG-plugin-ngArray#readme 
+    @name: aping-plugin-ng-array 
+    @version: 0.7.5 (10-01-2016) 
+    @author: Jonathan Hornung <jonathan.hornung@gmail.com> 
+    @url: https://github.com/JohnnyTheTank/apiNG-plugin-ngArray 
     @license: MIT
 */
 "use strict";
@@ -16,21 +16,20 @@ var jjtApingNgArray = angular.module("jtt_aping_ng_array", [])
             link: function (scope, element, attrs, apingController) {
 
                 var appSettings = apingController.getAppSettings();
-
                 var requests = apingUtilityHelper.parseJsonFromAttributes(attrs.apingNgArray, "ngArray", appSettings);
 
                 requests.forEach(function (request) {
 
-                    if(request.name && scope[request.name]) {
+                    if (request.name && scope[request.name]) {
 
                         var resultArray = [];
 
-                        if(scope[request.name].constructor === Array) {
+                        if (scope[request.name].constructor === Array) {
                             if (request.items < 0) {
                                 resultArray = scope[request.name];
                             } else {
                                 angular.forEach(scope[request.name], function (value, key) {
-                                    if(key < request.items) {
+                                    if (key < request.items) {
                                         resultArray.push(value);
                                     }
                                 });
@@ -39,7 +38,7 @@ var jjtApingNgArray = angular.module("jtt_aping_ng_array", [])
                             resultArray.push(scope[request.name]);
                         }
 
-                        if(resultArray.length > 0) {
+                        if (resultArray.length > 0) {
                             apingController.concatToResults(resultArray);
                         }
                     }
